@@ -4,7 +4,7 @@ zookeeper:
     - "2181:2181"
 
 kafkaBroker1:
-  image: hwasungmars/kafka-broker
+  build: .
   ports:
     - "9092:9092"
   links:
@@ -14,7 +14,7 @@ kafkaBroker1:
     PORT: 9092
 
 kafkaBroker2:
-  image: hwasungmars/kafka-broker
+  build: .
   ports:
     - "9093:9093"
   links:
@@ -22,4 +22,3 @@ kafkaBroker2:
   environment:
     BROKER_ID: 2
     PORT: 9093
-
