@@ -4,6 +4,7 @@ require 'erb'
 
 kafka_home = ENV['KAFKA_HOME']
 @local_ip = Socket.ip_address_list.find(&:ipv4_private?).ip_address
+@advertised_host_name = ENV['KAFKA_ADVERTISED_HOST_NAME'] || @local_ip
 @zk_ip = ENV['ZK_PORT_2181_TCP_ADDR'] 
 @broker_id = ENV['BROKER_ID']
 @port = ENV['PORT']
