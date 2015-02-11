@@ -7,10 +7,8 @@ EnvironmentFile=/etc/environment
 ## Directives with "=-" are allowed to fail without consequence.
 ExecStartPre=-/usr/bin/docker kill kafkabroker1
 ExecStartPre=-/usr/bin/docker rm kafkabroker1
-# This invokes docker through a shell in order to script in 
-# some access to etcdctl.
 
-ExecStart=/usr/bin/sh -c '/usr/bin/docker run --name kafkabroker1 -e ZK_PORT_2181_TCP_ADDR=$(/usr/bin/etcdctl get --consistent /services/zookeeper) -e PORT=9092 -p 9092:9092 -e BROKER_ID=1 -e KAFKA_ADVERTISED_HOST_NAME=${COREOS_PUBLIC_IPV4} -t mfaulk/kafka-docker'
+ExecStart=/usr/bin/sh -c '/usr/bin/docker run --name kafkabroker1 -e PORT=9092 -p 9092:9092 -e BROKER_ID=1 -e KAFKA_ADVERTISED_HOST_NAME=${COREOS_PUBLIC_IPV4} -t mfaulk/kafka-docker'
 ExecStop=/usr/bin/docker stop kafkabroker1
 
 [X-Fleet]
