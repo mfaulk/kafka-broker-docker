@@ -19,4 +19,4 @@ mode        = "0644"
 # These are the commands that will be used to check whether the rendered config is
 # valid and to reload the actual service once the new config is in place
 # check_cmd  = 
-reload_cmd  = "/opt/kafka/bin/kafka-server-stop.sh && /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties"
+# reload_cmd  = "/opt/kafka/bin/kafka-server-stop.sh && /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties"

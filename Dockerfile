@@ -9,7 +9,7 @@ RUN apt-get -y upgrade
 RUN apt-get install -y openjdk-7-jre-headless wget
 
 # Install confd
-RUN curl -qL https://github.com/kelseyhightower/confd/releases/download/v0.6.3/confd-0.6.3-linux-amd64 -o /usr/local/bin/confd && chmod +x /usr/local/bin/confd
+RUN curl -qL https://github.com/kelseyhightower/confd/releases/download/v0.7.1/confd-0.7.1-linux-amd64 -o /usr/local/bin/confd && chmod +x /usr/local/bin/confd
 RUN mkdir -p /etc/confd/conf.d
 RUN mkdir -p /etc/confd/templates
 
